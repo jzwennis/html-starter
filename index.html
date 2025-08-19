@@ -4,93 +4,360 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script defer src="/_vercel/insights/script.js"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css"
-    />
-    <title>Vercel HTML Starter</title>
-    <meta
-      name="description"
-      content="High-performance HTML based website template."
-    />
-  </head>
-  <body>
-    <h1>Vercel HTML Starter</h1>
-    <p>
-      This template is a simple, but powerful single
-      <code>index.html</code> file deployed to
-      <a href="https://vercel.com">Vercel</a>. When your site is deployed, all
-      static assets (like HTML, JavaScript, CSS, images, and more) are deployed
-      globally to every
-      <a href="https://vercel.com/docs/concepts/edge-network/overview"
-        >Vercel Edge Network</a
-      >
-      region.
-    </p>
-    <h2>Simple, privacy-friendly analytics</h2>
-    <p>
-      Want to understand your visitor traffic? Vercel Analytics gives you
-      first-party, privacy-friendly traffic analytics for your HTML site. This
-      template is already configured using the following script:
-    </p>
-    <pre><code>&lt;script defer src="/_vercel/insights/script.js"&gt;&lt;/script&gt;</code></pre>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/analytics">Vercel Analytics</a>.
-    </p>
-    <h2>Integrated with git</h2>
-    <p>
-      Deploying updates to your site is as simple as
-      <code>git push</code> thanks to Vercel's advanced
-      <a href="https://vercel.com/docs/concepts/git">Git Integration</a>.
-      Support for GitHub, GitLab, Bitbucket is zero-configuration, and with the
-      flexible Vercel CLI and API, you can integrate with any tool possible.
-    </p>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/git">Git Integration</a>.
-    </p>
-    <h2>Fast <code>gzip</code> compression</h2>
-    <p>
-      To help ensure the smallest possible file sizes for your static assets,
-      the Vercel Edge Network compresses files by default using
-      <code>gzip</code>. You can also optionally use
-      <code>brotli</code> compressesion if you prefer.
-    </p>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/edge-network/compression"
-        >compression</a
-      >.
-    </p>
-    <h2>Advanced routing configuration</h2>
-    <p>
-      Vercel gives you a variety of ways to configure the routing of your
-      website. For example, adding redirects, rewrites, or headers to your page.
-      While you can use <code>vercel.json</code> to define these through JSON,
-      you can also express your routing configuration as code using
-      <a href="https://vercel.com/docs/concepts/functions/edge-middleware"
-        >Vercel Edge Middleware</a
-      >.
-    </p>
-    <p>
-      Middleware runs before the
-      <a href="https://vercel.com/docs/concepts/edge-network/caching"
-        >Vercel Edge Network Cache</a
-      >, so you can configure routing exactly as your application needs. For
-      example, this template uses <code>middleware.js</code> defined in the root
-      of the repository to add additional security headers to the site:
-    </p>
-    <pre><code>referrer-policy: origin-when-cross-origin
-strict-transport-security: max-age=31536000; includeSubDomains; preload
-x-content-type-options: nosniff
-x-dns-prefetch-control: on
-x-frame-options: DENY</code></pre>
-    <p>
-      Learn more about
-      <a href="https://vercel.com/docs/concepts/functions/edge-middleware"
-        >Vercel Edge Middleware</a
-      >.
-    </p>
-  </body>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@exampledev/new.css@1.1.2/new.min.css"/>
+    <title>Add My Small Successes</title>
+    <meta name="description" content="High-performance HTML based website template."/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            text-align: center;
+            color: #4a5568;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #718096;
+            margin-bottom: 40px;
+            font-size: 1.1em;
+            font-style: italic;
+        }
+
+        .input-section {
+            margin-bottom: 40px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 15px;
+            border: 1px solid rgba(102, 126, 234, 0.2);
+        }
+
+        .input-section h2 {
+            margin-bottom: 20px;
+            color: #4a5568;
+            font-size: 1.4em;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 120px;
+            padding: 15px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 16px;
+            font-family: inherit;
+            resize: vertical;
+            transition: all 0.3s ease;
+            background: white;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        textarea::placeholder {
+            color: #a0aec0;
+            font-style: italic;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .successes-section {
+            margin-top: 40px;
+        }
+
+        .successes-title {
+            color: #4a5568;
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .success-entry {
+            background: white;
+            margin-bottom: 25px;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid #667eea;
+            transition: all 0.3s ease;
+        }
+
+        .success-entry:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .success-date {
+            color: #667eea;
+            font-weight: 600;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .success-date::before {
+            content: "🎉";
+            margin-right: 8px;
+        }
+
+        .success-text {
+            color: #4a5568;
+            line-height: 1.7;
+            font-size: 1em;
+        }
+
+        .no-successes {
+            text-align: center;
+            color: #a0aec0;
+            font-style: italic;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 15px;
+            border: 2px dashed #e2e8f0;
+        }
+
+        .char-counter {
+            text-align: right;
+            color: #a0aec0;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+                margin: 10px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .input-section {
+                padding: 20px;
+            }
+
+            textarea {
+                min-height: 100px;
+            }
+
+            .submit-btn {
+                width: 100%;
+                padding: 18px;
+                font-size: 18px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            .container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .success-entry {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Add My Small Successes</h1>
+        <p class="subtitle">Celebrate every achievement, no matter how small</p>
+
+        <div class="input-section">
+            <h2>Share Your Success</h2>
+            <textarea 
+                id="successInput" 
+                placeholder="Tell us about your small success today! Maybe you completed a task you've been putting off, learned something new, helped someone, or simply had a positive moment. Every success deserves to be celebrated..."
+                maxlength="2000"
+            ></textarea>
+            <div class="char-counter">
+                <span id="charCount">0</span>/2000 characters
+            </div>
+            <button class="submit-btn" onclick="addSuccess()">
+                Add My Success 🎉
+            </button>
+        </div>
+
+        <div class="successes-section">
+            <h2 class="successes-title">My Success Journey</h2>
+            <div id="successesList">
+                <div class="no-successes">
+                    Start sharing your successes! They'll appear here with the date and time you added them.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let successes = [];
+
+        // Character counter
+        document.getElementById('successInput').addEventListener('input', function() {
+            const charCount = this.value.length;
+            document.getElementById('charCount').textContent = charCount;
+        });
+
+        function addSuccess() {
+            const textarea = document.getElementById('successInput');
+            const text = textarea.value.trim();
+            
+            if (text === '') {
+                alert('Please enter your success story before submitting!');
+                return;
+            }
+
+            const now = new Date();
+            const success = {
+                text: text,
+                date: now,
+                id: Date.now()
+            };
+
+            successes.unshift(success); // Add to beginning of array
+            textarea.value = '';
+            document.getElementById('charCount').textContent = '0';
+            
+            displaySuccesses();
+            
+            // Show success message
+            const btn = document.querySelector('.submit-btn');
+            const originalText = btn.innerHTML;
+            btn.innerHTML = 'Success Added! 🌟';
+            btn.style.background = '#48bb78';
+            
+            setTimeout(() => {
+                btn.innerHTML = originalText;
+                btn.style.background = 'linear-gradient(135deg, #667eea, #764ba2)';
+            }, 2000);
+        }
+
+        function displaySuccesses() {
+            const successesList = document.getElementById('successesList');
+            
+            if (successes.length === 0) {
+                successesList.innerHTML = `
+                    <div class="no-successes">
+                        Start sharing your successes! They'll appear here with the date and time you added them.
+                    </div>
+                `;
+                return;
+            }
+
+            successesList.innerHTML = successes.map(success => {
+                const formattedDate = formatDate(success.date);
+                return `
+                    <div class="success-entry">
+                        <div class="success-date">${formattedDate}</div>
+                        <div class="success-text">${escapeHtml(success.text)}</div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function formatDate(date) {
+            const options = {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: '2-digit',
+                minute: '2-digit'
+            };
+            return date.toLocaleDateString('en-US', options);
+        }
+
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
+
+        // Allow Enter key to submit (Ctrl+Enter or Cmd+Enter)
+        document.getElementById('successInput').addEventListener('keydown', function(e) {
+            if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+                addSuccess();
+            }
+        });
+
+        // Initialize with example data for demonstration
+        window.addEventListener('load', function() {
+            // Add example success after a short delay
+            setTimeout(() => {
+                const exampleSuccess = {
+                    text: "Today I finally organized my desk and cleared out all the old papers I'd been meaning to sort through for weeks. It feels so much more peaceful to work in a clean space, and I found some important documents I thought I had lost! Sometimes the small tasks make the biggest difference in how we feel.",
+                    date: new Date(Date.now() - 2 * 60 * 60 * 1000), // 2 hours ago
+                    id: Date.now() - 1000
+                };
+                
+                successes.push(exampleSuccess);
+                displaySuccesses();
+            }, 1000);
+        });
+    </script>
+</body>
 </html>
